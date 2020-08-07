@@ -42,7 +42,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
 
-    implementation 'com.huawei.hms:hianalytics:5.0.1.301'
+    //implementation 'com.huawei.hms:hianalytics:5.0.1.301'
 
     // TODO: Adding hms to some specific build type will cause error
     // HAPlugin could not find HA dependency in your "build.gradle". Please add hianalytics dependency to your "build.gradle"
