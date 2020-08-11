@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
 apply plugin:'com.huawei.hms.plugin.analytics'
 
 android {
@@ -23,6 +24,16 @@ android {
         }
     }
 
+    flavorDimensions "store"
+    productFlavors {
+        googlePlay {
+            dimension "store"
+        }
+        appGallery {
+            dimension "store"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -42,7 +53,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
 
-    //implementation 'com.huawei.hms:hianalytics:5.0.1.301'
+    googlePlayImplementation 'com.google.firebase:firebase-analytics-ktx:17.4.4'
+    appGalleryImplementation 'com.huawei.hms:hianalytics:5.0.1.301'
 
     // TODO: Adding hms to some specific build type will cause error
     // HAPlugin could not find HA dependency in your "build.gradle". Please add hianalytics dependency to your "build.gradle"
